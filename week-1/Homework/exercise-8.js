@@ -43,6 +43,50 @@ function addStudentLikes(mentors){
 }
 */ 
 
+function addSkill(skillName) {
+  this.skills.push(skillName)
+}
+
+function removeSkill(skillName) {
+  this.skills = this.skills.filter(function (name) {
+    return name !== skillName
+  })
+}
+
+
+function addSkillFromMentors(mentors,newSkill){
+  for (const mentor of mentors) {
+    mentor.addSkill(newSkill)
+  }
+}
+
+function removeSkillFromMentors(mentors,newSkill){
+  for (const mentor of mentors) {
+    mentor.removeSkill(newSkill)
+  }
+}
+
+function mentorWithMostSkills(mentors) {
+  let topMentor
+
+  for (const mentor of mentors) {
+    if (!topMentor || topMentor.skills.length < mentor.skills.length)
+      topMentor = mentor
+  }
+
+  return topMentor
+}
+
+function addStudentLikes() {
+  this.studentLikes = this.studentLikes + 1
+} 
+
+function likeAllMentors(mentors) {
+  for (const mentor of mentors) {
+    mentor.addStudentLikes()
+  }
+}
+
 var mentors = [
   {
     firstName: "Antonio",
@@ -55,7 +99,10 @@ var mentors = [
         company: "Google",
         position: "Senior developer",
         city: "Barcelona"
-      }
+      },
+    addSkill: addSkill,
+    removeSkill: removeSkill,
+    addStudentLikes: addStudentLikes,
   },
   {
     firstName: "Leo",
@@ -68,7 +115,10 @@ var mentors = [
         company: "FC Barcelona",
         position: "Player",
         city: "Barcelona"
-      }
+      },
+    addSkill: addSkill,
+    removeSkill: removeSkill,
+    addStudentLikes: addStudentLikes,
   },
   {
     firstName: "John",
@@ -81,7 +131,10 @@ var mentors = [
         company: "Facebook",
         position: "Software Manager",
         city: "Chicago"
-      }
+      },
+    addSkill: addSkill,
+    removeSkill: removeSkill,
+    addStudentLikes: addStudentLikes,
   },  
   {
     firstName: "Giorgio",
@@ -94,10 +147,27 @@ var mentors = [
         company: "Amazon",
         position: "Senior developer",
         city: "Barcelona"
-      }
+      },
+    addSkill: addSkill,
+    removeSkill: removeSkill,
+    addStudentLikes: addStudentLikes,
   },
 
 ];
 
 //YOUR CODE HERE
+for (const mentor of mentors) {
+  const knowsReact = mentor.skills.includes('React')
+  const livesInBarcelona = mentor.job.city === 'Barcelona'
+  if (knowsReact && livesInBarcelona)
+    console.log(`Hi, my name is ${mentor.firstName} ${mentor.lastName}. I work in Barcelona and i know React.`)
+}
 
+
+for (const mentor of mentors) {
+  const livesInBarcelona = mentor.job.city === 'Barcelona'
+  if (livesInBarcelona) {
+    mentor.class = 'Jun1'
+    mentor.skills.push('SQL')
+  }
+}
