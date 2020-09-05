@@ -1,4 +1,5 @@
 
+alert("hello");
 var myButton = document.querySelector("#myButton");
 myButton.addEventListener("click", sayHi);
 

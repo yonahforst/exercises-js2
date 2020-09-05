@@ -1,22 +1,21 @@
 /*
-    Given the same "house" object again
+Given the same "house" object again
 
-    Follow the instructions below and then run the file 
-    and make sure it outputs the correct results
+Follow the instructions below and then run the file and make sure it outputs the correct results
 */
 
-var house = {
-    address: "1 Kinning Park",
-    previousOwners: ["Claire M.", "John A."],
-    currentOwner: {
-      firstName: "Margaret",
-      lastName: "Conway"
-    }
+let house = {
+  address: "1 Kinning Park",
+  previousOwners: ["Claire M.", "John A."],
+  currentOwner: {
+    firstName: "Margaret",
+    lastName: "Conway",
+  },
 };
 
-var newCurrentOwner = {
-    firstName: "Georgina",
-    lastName: "Hernandez"
+let newCurrentOwner = {
+  firstName: "Georgina",
+  lastName: "Hernandez",
 };
 
 /*
@@ -29,14 +28,15 @@ var newCurrentOwner = {
 // - from the list of previous owners, replace only "John A." with "Stephen B."
 // - give the house a new property called 'isForSale' with the value 'false'
 
-
-
-
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 console.log(
-    "Did you correctly assign the new owner using the given variable?",
-    "Expected result: true. Actual result: " + (house.currentOwner === newCurrentOwner));
-console.log("Expected result: Claire M., Stephen B. Actual result: " + house.previousOwners.toString());
-console.log("Expected result: false. Actual result: " + house.isForSale);
+  `Did you correctly assign the new owner using the given variable?","Expected result: true. Actual result: " ${
+    house.currentOwner === newCurrentOwner
+  }`
+);
+console.log(
+  `Expected result: Claire M., Stephen B. Actual result: ${house.previousOwners.toString()}`
+);
+console.log(`Expected result: false. Actual result: ${house.isForSale}`);
