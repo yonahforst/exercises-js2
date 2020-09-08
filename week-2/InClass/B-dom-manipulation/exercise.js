@@ -52,8 +52,6 @@ var changeColorButton = document.querySelector('#bgrChangeBtn')
 //   sets page's backgroundColor to 'red'
 changeColorButton.addEventListener('click', function() {
     var pageElement = document.querySelector('body')
-    var newDiv = document.createElement('div')
-    pageElement.appendChild(newDiv)
     pageElement.style.backgroundColor = 'red'
 })
 
