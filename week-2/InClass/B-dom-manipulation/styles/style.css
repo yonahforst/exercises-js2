@@ -26,6 +26,10 @@ body {
 	width: auto;
 }
 
+.blueBackground {
+	background-color: blue;
+}
+
 .navbar-light .navbar-nav .nav-link {
 	color: #292b2c;
 	font-weight: 600;
