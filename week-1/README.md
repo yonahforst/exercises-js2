@@ -1,1 +1,0 @@
-# exercises-js2-week1
